@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .prediction-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.8);
+        }
+        .prediction-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0px 0px 10px #00ff00;
+        }
+        .date{
+            color: rgb(186, 189, 192);
+        }
+    </style>
+</head>
+<body>
+    <div class="prediction-box">
+        <h1>Microsoft's Close Prediction</h1>
+        <p class="prediction-text">$ {{ prediction }}</p>
+        <p class="date">Predicted for : {{ date }}</p>
+    </div>
+    <footer style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.9rem; color: #aaaaaa;">
+        <p><strong>Disclaimer:</strong> This is an AI-generated prediction based on historical data and does not guarantee future stock performance. Always conduct your own research before making financial decisions.</p>
+    </footer>   
+</body>
+</html>
