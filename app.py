@@ -3,8 +3,7 @@ import numpy
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow import keras
 import yfinance as yf
-from datetime import date,timedelta 
-import pandas_ta as ta 
+from datetime import date,timedelta
 
 model = keras.models.load_model("lala_trading_model.h5", compile=False)
 
