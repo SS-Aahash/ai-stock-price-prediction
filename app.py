@@ -22,7 +22,7 @@ def home():
 
     yesterday = date.today()
     day_before_yesterday = yesterday-timedelta(days=1)
-    prev_days = yesterday-timedelta(days=400)
+    prev_days = yesterday-timedelta(days=300)
     # data = yf.download("MSFT", start = prev_days, end = day_before_yesterday, interval="1d")
     data = yf.download("MSFT", start = prev_days, end = yesterday, interval="1d")
     data.columns = data.columns.droplevel(1)
@@ -40,9 +40,8 @@ def home():
     dummy = numpy.zeros((y_hat.shape[0],no_of_features))
     dummy[:,index_of_close] = y_hat
     y_hat = scaler.inverse_transform(dummy)[:,index_of_close]
-    print(f'Prediction for {yesterday} is ${y_hat[0]}')
     
     return render_template('index.html', prediction=round(y_hat[0], 2), date=yesterday)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000, debug=True)
